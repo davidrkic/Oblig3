@@ -1,0 +1,20 @@
+
+
+rooms = {
+    'Room A': 30,
+    'Room B': 45,
+    'Room C': 60,
+    'Room D': 20,
+    'Room E': 55
+}
+ 
+room_name = 'Room B'
+seats_in_room = rooms.get(room_name, "Room not found")
+print(f"There are {seats_in_room} seats in {room_name}.")
+
+rooms['Room B'] += 10
+print(f"New capacity of Room B: {rooms['Room B']} seats.")
+
+large_rooms = [room for room, seats in rooms.items() if seats >= 50]
+print(f"Rooms with at least 50 seats: {large_rooms}")
+

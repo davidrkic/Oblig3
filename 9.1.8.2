@@ -1,0 +1,27 @@
+def all_z_words(words):
+    """Returns a list of words that contain the letter 'z'."""
+    return [word for word in words if 'z' in word]
+
+# Test cases
+def test_all_z_words():
+    assert all_z_words(['zebra', 'apple', 'pizza', 'dog']) == ['zebra', 'pizza']
+    assert all_z_words(['zoo', 'buzz', 'fizz']) == ['zoo', 'buzz', 'fizz']
+    assert all_z_words(['cat', 'dog', 'fish']) == []
+    assert all_z_words([]) == []
+
+test_all_z_words()
+print("All tests passed for all_z_words!")
+
+def all_z_words_filter(words):
+    """Returns a list of words that contain the letter 'z' using filter."""
+    return list(filter(lambda word: 'z' in word, words))
+
+# Test cases
+def test_all_z_words_filter():
+    assert all_z_words_filter(['zebra', 'apple', 'pizza', 'dog']) == ['zebra', 'pizza']
+    assert all_z_words_filter(['zoo', 'buzz', 'fizz']) == ['zoo', 'buzz', 'fizz']
+    assert all_z_words_filter(['cat', 'dog', 'fish']) == []
+    assert all_z_words_filter([]) == []
+
+test_all_z_words_filter()
+print("All tests passed for all_z_words_filter!")

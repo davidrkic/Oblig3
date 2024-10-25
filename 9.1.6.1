@@ -1,0 +1,26 @@
+#9.1.6.1
+def konverter_fortegn(tall_liste):
+    return ["pos" if tall > 0 else "neg" if tall < 0 else "zero" for tall in tall_liste]
+
+# Eksempelbruk
+tall = [-5, 0, 7, -1, 3, 0, -10]
+fortegn = konverter_fortegn(tall)
+print(fortegn)  # Output: ['neg', 'zero', 'pos', 'neg', 'pos', 'zero', 'neg']
+
+# Problem 2: Funksjon som sjekker om noen streng i en liste har lengde 5.
+def sjekk_lengde_fem(streng_liste):
+    return any(len(s) == 5 for s in streng_liste)
+
+# Eksempelbruk
+strenger = ["eple", "banan", "pære", "drue"]
+har_lengde_fem = sjekk_lengde_fem(strenger)
+print(har_lengde_fem)  # Output: True
+
+# Problem 3: Funksjon som vil filtrere ut partall mellom 10 og 20 fra en liste med tall.
+def filtrer_partall(tall_liste):
+    return [t for t in tall_liste if 10 <= t <= 20 and t % 2 == 0]
+
+# Eksempelbruk
+tall = [8, 12, 15, 18, 21, 13, 10, 22]
+partall_mellom_10_og_20 = filtrer_partall(tall)
+print(partall_mellom_10_og_20)  # Output: [12, 18, 10]
