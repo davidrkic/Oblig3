@@ -1,0 +1,34 @@
+include data-source
+include tables
+
+# Definerer en ny datatype for studenter med navn og gruppenummer
+data studenter: student(navn, gruppenr) end 
+
+# Oppretter noen studenter med deres respektive gruppenummer
+David = student("David", 1)
+Per = student("Per", 1)
+Chris = student("Chris", 2)
+Jonas = student("Jonas", 2)
+Peder = student("Peder", 3)
+Arne = student("Arne", 3)
+
+# Definerer en ny datatype for grupper med gruppenavn og gruppenummer
+data grupper: gruppe(navn, gruppenr) end
+
+# Oppretter gruppene med navn og deres respektive gruppe_nr
+gruppe1 = gruppe("Gruppe 1", 1)
+gruppe2 = gruppe("Gruppe 2", 2)
+gruppe3 = gruppe("Gruppe 3", 3)
+
+# Funksjon som finner gruppen til en student basert på gruppenummer
+fun finnGruppe(name :: studenter):
+  if name.gruppenr == 1:
+    gruppe1.navn
+  else if name.gruppenr == 2:
+    gruppe2.navn
+  else if name.gruppenr == 3:
+    gruppe3.navn
+  end
+where:
+  finnGruppe(David) is "Gruppe 1"
+end
